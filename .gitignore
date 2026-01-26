@@ -1,0 +1,44 @@
+# --- Unity Standard ---
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Dd]ist/
+/[Ll]ogs/
+/[Mm]emoryCaptures/
+/[Uu]serSettings/
+
+# --- IDE (Visual Studio / Rider / VS Code) ---
+.vscode/
+.vs/
+*.csproj
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.idea/
+
+/transfer/
+
+# --- OS Specs ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+# --- Native Plugins ---
+/[Assets]/AssetStoreTools*
+
+# --- Calchemy Specific ---
+# Antigravity 임시 작업물
+.antigravity_cache/
+.gemini/
+brain/
+node_modules/
+.env
