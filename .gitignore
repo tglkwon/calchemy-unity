@@ -21,6 +21,7 @@
 .idea/
 
 /transfer/
+/.agents/
 
 # --- OS Specs ---
 .DS_Store

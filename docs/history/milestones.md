@@ -10,3 +10,4 @@
 - `GridManager`, `BattleManager`, `EffectProcessor` 뼈대 구현.
 - `README.md` 인덱스화 및 `docs/` 주제별 문서 분리.
 - 유니티 표준 `.gitignore` 설정을 통한 Git 저장소 용량 최적화.
+- 레거시 `CardSystem.js` 기반 빙고 판정(대각선, 조화 빙고) 및 그리드 조작(반사 타겟팅) 로직 이식.
