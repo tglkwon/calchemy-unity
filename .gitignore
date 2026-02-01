@@ -22,6 +22,7 @@
 
 /transfer/
 /.agents/
+ignore.conf
 
 # --- OS Specs ---
 .DS_Store
@@ -43,3 +44,11 @@ Thumbs.db
 brain/
 node_modules/
 .env
+
+# --- Plastic SCM ---
+/.plastic/
+
+# --- Build Artifacts ---
+*.apk
+*.aab
+*.unitypackage
