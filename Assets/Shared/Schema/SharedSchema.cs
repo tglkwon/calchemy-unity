@@ -55,6 +55,11 @@ namespace LogicForge.Schema
         public string Formula ;
 
         /// <summary>
+        /// 컴포넌트 이름 (표시용)
+        /// </summary>
+        public string Name;
+
+        /// <summary>
         /// 사용 가능 조건 (예: MP > 30, HAND_SIZE < 5)
         /// </summary>
         public string Requirement ;

@@ -15,7 +15,7 @@ namespace Calchemy.Systems
 
         private void Start()
         {
-            if (dataLoader == null) dataLoader = FindObjectOfType<DataLoader>();
+            if (dataLoader == null) dataLoader = FindFirstObjectByType<DataLoader>();
         }
 
         [ContextMenu("Run Simulation")]

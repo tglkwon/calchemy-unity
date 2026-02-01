@@ -1,0 +1,47 @@
+{
+    "version": "2.0",
+    "cards": [
+        {
+            "id": "card_ts_fireball",
+            "name": "Fireball (TS Schema)",
+            "imageId": "icon_fireball",
+            "description": "Deal damage based on ATK.",
+            "logic": {
+                "trigger": {
+                    "type": "OnPlay",
+                    "priority": 1
+                },
+                "target": {
+                    "type": "SingleEnemy",
+                    "filter": "None"
+                },
+                "cost": {
+                    "type": "Mana",
+                    "value": 3
+                },
+                "effects": [
+                    {
+                        "sequenceId": 1,
+                        "type": "DealDamage",
+                        "formula": "$ATK * 2.5",
+                        "duration": {
+                            "type": "Instant",
+                            "value": 0
+                        },
+                        "conditions": []
+                    },
+                    {
+                        "sequenceId": 2,
+                        "type": "ApplyStatus",
+                        "valueString": "Burn",
+                        "formula": "3",
+                        "duration": {
+                            "type": "Turn",
+                            "value": 2
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Calchemy.Data;
+using System.Collections.Generic;
 
 namespace Calchemy.Entities
 {
@@ -11,6 +12,8 @@ namespace Calchemy.Entities
         public CardData cardData;
         public int currentHp;
         public int maxHp;
+
+        public List<StatusEffect> statusEffects = new List<StatusEffect>();
         
         // 위치 정보 (그리드 좌표)
         public int gridX;
@@ -34,6 +37,23 @@ namespace Calchemy.Entities
         {
             // 사망 처리 로직
             Debug.Log($"{cardData.cardName}이(가) 파괴되었습니다.");
+        }
+
+        public void AddStatus(string id, int value, int duration)
+        {
+            // Simple logic: Find existing and stack, or add new
+            var existing = statusEffects.Find(s => s.id == id);
+            if (existing != null)
+            {
+                existing.value += value;
+                existing.duration = UnityEngine.Mathf.Max(existing.duration, duration); // Refresh duration
+                Debug.Log($"[UnitEntity] Status Stacked: {id} (Val: {existing.value}, Dur: {existing.duration})");
+            }
+            else
+            {
+                statusEffects.Add(new StatusEffect(id, value, duration));
+                Debug.Log($"[UnitEntity] Status Added: {id} (Val: {value}, Dur: {duration})");
+            }
         }
     }
 }
