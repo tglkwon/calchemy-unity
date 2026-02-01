@@ -3,7 +3,7 @@ using UnityEngine;
 using LogicForge.Schema;
 using Newtonsoft.Json; // Requires 'com.unity.nuget.newtonsoft-json'
 
-namespace Core.Data
+namespace Calchemy.Systems
 {
     public class DataLoader : MonoBehaviour
     {
@@ -69,9 +69,20 @@ namespace Core.Data
                 }
 
                 // 2. Resource Validation (Image)
-                // Assuming Metadata contains 'imageId' or similar, or we map ID to sprite.
-                // Example: Check if sprite exists in Resources/Sprites/Cards/{ID}
-                // if (Resources.Load<Sprite>($"Sprites/Cards/{card.Id}") == null) { ... }
+                // Delegate resource loading to ResourceManager
+                // Assuming Metadata might contain 'imageId' in the future, but currently using ID.
+                // We use a safe check for Instance in case DataLoader runs before ResourceManager initializes (though Script Order should handle this usually)
+                if (ResourceManager.Instance != null)
+                {
+                    ResourceManager.Instance.LoadCardSprite(card.Id);
+                }
+                else
+                {
+                    // Fallback for Editor-time execution or if ResourceManager is missing
+                    // Note: Resources.Load works in Editor, so we could do a direct check here if strictly needed for validation log,
+                    // but the goal is to pre-cache for runtime.
+                    // Debug.LogWarning("[DataLoader] ResourceManager instance not found. Skipping sprite pre-caching.");
+                }
 
                 if (!isValid)
                 {

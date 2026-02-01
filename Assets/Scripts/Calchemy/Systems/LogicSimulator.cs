@@ -1,9 +1,9 @@
 using UnityEngine;
 using LogicForge.Schema;
 using LogicForge.Logic;
-using Core.Data;
+using Calchemy.Systems;
 
-namespace Core.Simulation
+namespace Calchemy.Systems
 {
     public class LogicSimulator : MonoBehaviour, ILogicContext
     {

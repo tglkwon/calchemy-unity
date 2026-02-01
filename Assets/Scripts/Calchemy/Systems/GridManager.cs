@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Calchemy.Entities;
+using Calchemy.Data;
 using Calchemy.Core;
 
 namespace Calchemy.Systems
