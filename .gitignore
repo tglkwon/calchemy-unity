@@ -21,7 +21,6 @@
 .idea/
 
 /transfer/
-/.agents/
 ignore.conf
 
 # --- OS Specs ---
