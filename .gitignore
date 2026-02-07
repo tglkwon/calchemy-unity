@@ -43,6 +43,7 @@ Thumbs.db
 brain/
 node_modules/
 .env
+secrets.json
 
 # --- Plastic SCM ---
 /.plastic/
