@@ -8,6 +8,10 @@
 ### [2026.02.21] MCP 통신 기반 구축 및 전투 UI 프로토타이핑
 - **MCP 연결 안정화**: `mcp-for-unity` 서버 포트 점유 문제 해결 및 자동화 워크플로우(`check-unity-mcp`, `connect-unity-mcp` 강화) 도입.
 - **UI 프로토타이핑**: `BattleUIMockup.cs` 및 `MockupDataPusher.cs` 구현을 통해 시각적 체력바 보간 및 데이터 갱신 시뮬레이션 환경 구축.
+- **MCP 데이터 연동 뼈대 구현 (Phase 3)**:
+  - LogicForge에서 제공하는 `Card Components(Trigger, Condition, Effect)` JSON 데이터를 파싱하는 `MCPDataParser` 스키마 및 C# Delegate(`Action`) 변환 파서(`ComponentParser`) 뼈대 작성.
+  - 외부 서버 데이터(또는 더미 JSON) 수신 상황을 가정한 실차 렌더링 통합 스크립트(`BattleDataIntegrator`) 구현.
+- **로컬 시스템 엔진 뼈대 확장**: 기존 Grid/Battle 매니저 외에 `MapManager`, `RewardManager`, `AudioManager` 뼈대 스크립트를 추가 생성하여 클라이언트 사이드 책임을 명확히 함.
 - **에셋 적용**: AI 생성 스프라이트 2종(플레이어 골렘, 적 몬스터) 인게임 테스트 씬 적용.
 
 ### [2026.02.01] 데이터 연동 시스템 구축 및 리팩토링
